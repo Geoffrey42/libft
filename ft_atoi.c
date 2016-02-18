@@ -21,12 +21,12 @@ int		ft_atoi(char *str)
 	i = 0;
 	r = 0;
 	s = 1;
-	if (str[0] == '-')
+	if (str[i] == '-')
 	{
 		s = -1;
 		i++;
 	}
-	else if (str[0] == '+')
+	else if (str[i] == '+')
 		i++;
 	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
 		i++;
