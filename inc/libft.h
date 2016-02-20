@@ -6,7 +6,7 @@
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/19 08:43:32 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/20 10:31:55 by ggane            ###   ########.fr       */
+/*   Updated: 2016/02/20 10:54:19 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			ft_putchar(char c);
 void			ft_putstr(char *str);
 void			ft_putnbr(int nb);
+char			*ft_strchr(const char *s, int c);
+char			*ft_strrchr(const char *s, int c);
 
 #endif
