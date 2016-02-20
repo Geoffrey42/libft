@@ -6,7 +6,7 @@
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/19 08:43:32 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/20 10:54:19 by ggane            ###   ########.fr       */
+/*   Updated: 2016/02/20 12:57:28 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char			*ft_strncat(char *dest, char *src, int nb);
 int				ft_strncmp(char *s1, char *s2, unsigned int n);
 char			*ft_strncpy(char *dest, char *src, unsigned int n);
 char			*ft_strstr(char *str, char *to_find);
+char			*ft_strnstr(char *str, char *to_find, size_t n);
 void			*ft_memset(void *str, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void *restrict dst, const void *restrict src,
