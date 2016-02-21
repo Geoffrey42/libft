@@ -6,7 +6,7 @@
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/19 08:43:32 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/21 17:14:09 by ggane            ###   ########.fr       */
+/*   Updated: 2016/02/21 18:19:19 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ int				ft_isascii(int c);
 int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
+
+void			*ft_memalloc(size_t size);
 
 #endif
