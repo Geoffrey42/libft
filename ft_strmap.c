@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/21 18:17:25 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/21 19:32:53 by ggane            ###   ########.fr       */
+/*   Created: 2016/02/21 23:00:24 by ggane             #+#    #+#             */
+/*   Updated: 2016/02/21 23:33:08 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	void	*tmp;
+	unsigned int	i;
+	char			*p;
 
-	if ((tmp = (void*)malloc(sizeof(void) * size)))
+	i = 0;
+	p = ft_strdup((char *)s);
+	while (p[i])
 	{
-		ft_bzero(tmp, size);
-		return (tmp);
+		p[i] = f(p[i]);
+		i++;
 	}
-	else
-		return (NULL);
+	p[i] = '\0';
+	return (p);
 }

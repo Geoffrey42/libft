@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/21 18:17:25 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/21 19:32:53 by ggane            ###   ########.fr       */
+/*   Created: 2016/02/21 21:15:28 by ggane             #+#    #+#             */
+/*   Updated: 2016/02/21 21:48:27 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+void	ft_memdel(void **ap)
 {
-	void	*tmp;
-
-	if ((tmp = (void*)malloc(sizeof(void) * size)))
+	if (ap)
 	{
-		ft_bzero(tmp, size);
-		return (tmp);
+		free(*ap);
+		*ap = NULL;
 	}
-	else
-		return (NULL);
 }

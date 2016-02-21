@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/21 18:17:25 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/21 19:32:53 by ggane            ###   ########.fr       */
+/*   Created: 2015/10/28 09:14:09 by ggane             #+#    #+#             */
+/*   Updated: 2016/02/21 23:28:47 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+char	*ft_strdup(char *src)
 {
-	void	*tmp;
+	char	*cpy;
 
-	if ((tmp = (void*)malloc(sizeof(void) * size)))
-	{
-		ft_bzero(tmp, size);
-		return (tmp);
-	}
-	else
+	cpy = (char *)malloc(sizeof(char) * ft_strlen(src) + 1);
+	if (cpy == NULL)
 		return (NULL);
+	else
+		ft_strcpy(cpy, src);
+	return (cpy);
 }

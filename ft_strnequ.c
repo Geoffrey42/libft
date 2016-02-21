@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/21 18:17:25 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/21 19:32:53 by ggane            ###   ########.fr       */
+/*   Created: 2016/02/21 23:37:41 by ggane             #+#    #+#             */
+/*   Updated: 2016/02/21 23:38:24 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int		ft_strenqu(char const *s1, char const *s2, size_t n)
 {
-	void	*tmp;
-
-	if ((tmp = (void*)malloc(sizeof(void) * size)))
-	{
-		ft_bzero(tmp, size);
-		return (tmp);
-	}
+	if (ft_strncmp((char*)s1, (char*)s2, n) == 0)
+		return (1);
 	else
-		return (NULL);
+		return (0);
 }
