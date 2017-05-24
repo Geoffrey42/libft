@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/20 18:35:15 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/20 18:38:46 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/18 10:41:39 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/18 10:48:04 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int		ft_isalnum(int c)
 {
-	unsigned char	d;
-
-	d = (unsigned char)c;
-	if (ft_isalpha(d) == 0 && ft_isdigit(d) == 0)
-		return (0);
-	return (1);
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (1);
+	return (0);
 }

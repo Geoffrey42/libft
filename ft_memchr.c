@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/19 19:21:04 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/19 19:42:40 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/10 19:14:49 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/10 22:28:02 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*p;
+	unsigned int	i;
 
 	p = (unsigned char *)s;
-	while (n > 0)
+	i = 0;
+	while (i < n)
 	{
-		if (*p++ == c)
-			return ((void*)p - 1);
-		n--;
+		if (p[i] == (unsigned char)c)
+			return ((void *)p + i);
+		i++;
 	}
 	return (NULL);
 }

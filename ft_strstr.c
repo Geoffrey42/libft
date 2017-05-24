@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/09/22 15:17:34 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/18 16:49:19 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/12 20:09:43 by ggane             #+#    #+#             */
+/*   Updated: 2016/10/05 20:24:38 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(char *str, char *to_find)
+char	*ft_strstr(const char *big, const char *little)
 {
 	int		i;
 	int		j;
@@ -20,17 +20,17 @@ char	*ft_strstr(char *str, char *to_find)
 
 	i = 0;
 	pt = 0;
-	if (to_find[i] == '\0')
-		return (str);
-	while (str[i] != '\0')
+	if (little[i] == '\0')
+		return ((char *)big);
+	while (big[i] != '\0')
 	{
-		if (str[i] == to_find[0])
+		if (big[i] == little[0])
 		{
-			pt = str + i;
+			pt = (char *)big + i;
 			j = 0;
-			while (str[i + j] == to_find[j])
+			while (big[i + j] == little[j])
 			{
-				if (to_find[j + 1] == '\0')
+				if (little[j + 1] == '\0')
 					return (pt);
 				j++;
 			}

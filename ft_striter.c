@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/21 22:45:42 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/21 22:48:37 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/18 19:12:40 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/18 19:36:32 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	int		i;
+	unsigned int	i;
 
 	i = 0;
-	if (f == NULL || s == NULL)
-		return ;
 	while (s[i])
 	{
 		f(&s[i]);

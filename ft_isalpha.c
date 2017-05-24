@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/20 13:19:58 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/20 18:18:33 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/18 09:50:59 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/18 09:57:18 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int		ft_isalpha(int c)
 {
-	if (ft_isupper(c))
-		return (1);
-	else if (ft_islower(c))
+	if (ft_isupper(c) || ft_islower(c))
 		return (1);
 	return (0);
 }

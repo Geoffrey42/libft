@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/22 11:21:01 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/22 11:22:06 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/21 08:09:10 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/21 08:14:13 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,19 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int	nb;
+	long long int		lli;
 
-	if (n < 0)
+	lli = n;
+	if (lli < 0)
 	{
-		nb = -n;
 		ft_putchar_fd('-', fd);
+		lli = -lli;
 	}
-	else
-		nb = n;
-	if (nb < 10)
-		ft_putchar_fd(nb + '0', fd);
-	else
+	if (lli > 9)
 	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);
+		ft_putnbr_fd(lli / 10, fd);
+		ft_putchar_fd((lli % 10) + '0', fd);
 	}
+	else
+		ft_putchar_fd(lli + '0', fd);
 }

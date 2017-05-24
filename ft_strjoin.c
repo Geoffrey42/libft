@@ -5,22 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/22 10:55:42 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/22 10:58:42 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/19 07:26:39 by ggane             #+#    #+#             */
+/*   Updated: 2016/05/08 16:12:07 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+static char	*fill_join(char *dst, char const *s2, unsigned int i, char *tmp)
 {
-	char *new;
+	size_t			len;
+	unsigned int	j;
 
-	if (!s1 || !s2 || !(new = ft_strnew(ft_strlen((char *)s1)
-	+ ft_strlen((char*)s2) + 1)))
+	len = ft_strlen(tmp);
+	j = 0;
+	while (j < len)
+	{
+		dst[i] = tmp[j];
+		i++;
+		j++;
+	}
+	if (tmp == s2)
+		return (dst);
+	return (fill_join(dst, s2, i, (char *)s2));
+}
+
+char		*ft_strjoin(char const *s1, char const *s2)
+{
+	size_t			size;
+	char			*join;
+	unsigned int	i;
+
+	if (!s1 || !s2)
 		return (NULL);
-	new = ft_strdup((char*)s1);
-	new = ft_strcat(new, (char*)s2);
-	new[ft_strlen(new)] = '\0';
-	return (new);
+	size = ft_strlen(s1) + ft_strlen(s2);
+	join = ft_memalloc(size + 1);
+	if (!join)
+		return (NULL);
+	i = 0;
+	fill_join(join, s2, i, (char *)s1);
+	return (join);
 }

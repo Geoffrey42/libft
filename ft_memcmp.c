@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/19 19:46:42 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/20 08:54:51 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/10 20:48:40 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/10 22:43:15 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	p2 = (unsigned char *)s2;
 	while (n > 0)
 	{
-		if (*p1++ != *p2++)
-			return (*p1++ - *p2++);
+		if (*p1 != *p2)
+			return (*p1 - *p2);
+		p1++;
+		p2++;
 		n--;
 	}
 	return (0);

@@ -5,27 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/09/21 09:18:14 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/18 16:47:03 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/10 22:58:27 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/24 18:47:07 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	unsigned int	index;
+	unsigned int	i;
 
-	index = 0;
-	while (src[index] != '\0' && index < n)
+	i = 0;
+	while (src[i] != '\0' && i < len)
 	{
-		dest[index] = src[index];
-		index++;
+		dst[i] = src[i];
+		i++;
 	}
-	while (index < n)
-	{
-		dest[index] = '\0';
-		index++;
-	}
-	return (dest);
+	while (i < len)
+		dst[i++] = '\0';
+	return (dst);
 }

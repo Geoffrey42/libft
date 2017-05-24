@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/21 22:30:53 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/21 22:34:25 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/18 15:54:06 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/21 18:42:46 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,14 @@
 
 void	ft_strclr(char *s)
 {
-	ft_bzero((void*)s, ft_strlen(s));
+	int		len;
+
+	if (!s)
+		return ;
+	len = ft_strlen(s);
+	while (len >= 0)
+	{
+		s[len] = '\0';
+		len--;
+	}
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/21 22:52:02 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/21 22:52:51 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/18 19:36:53 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/21 17:51:08 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	unsigned int	i;
 
 	i = 0;
-	if (f == NULL || s == NULL)
+	if (!s || !f)
 		return ;
 	while (s[i])
 	{

@@ -5,18 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/19 08:48:39 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/19 08:48:45 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/20 19:49:00 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/27 08:31:42 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char *str)
+void	ft_putstr(char const *s)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		ft_putchar(str[i++]);
+	if (s == NULL)
+		return ;
+	write(1, s, ft_strlen(s));
 }

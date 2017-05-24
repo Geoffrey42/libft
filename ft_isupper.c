@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/20 15:17:30 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/20 18:12:28 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/18 09:57:54 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/22 09:20:13 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int		ft_isupper(int c)
 {
-	unsigned char d;
-
-	d = (unsigned char)c;
-	if (d < 'A' || d > 'Z')
-		return (0);
-	return (1);
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	return (0);
 }

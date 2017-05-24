@@ -5,21 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/28 09:14:09 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/21 23:28:47 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/10 22:45:15 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/10 22:53:23 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *s1)
 {
-	char	*cpy;
+	char	*copy;
 
-	cpy = (char *)malloc(sizeof(char) * ft_strlen(src) + 1);
-	if (cpy == NULL)
+	copy = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1);
+	if (copy == NULL)
 		return (NULL);
 	else
-		ft_strcpy(cpy, src);
-	return (cpy);
+		copy = ft_strcpy(copy, s1);
+	return (copy);
 }

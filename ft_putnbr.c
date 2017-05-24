@@ -5,18 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/09/19 19:44:29 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/19 09:37:51 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/21 08:13:20 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/21 08:14:45 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+void	ft_putnbr(int n)
 {
 	long long int		lli;
 
-	lli = nb;
+	lli = n;
 	if (lli < 0)
 	{
 		ft_putchar('-');

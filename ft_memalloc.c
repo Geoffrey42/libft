@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/21 18:17:25 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/21 19:32:53 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/18 11:17:00 by ggane             #+#    #+#             */
+/*   Updated: 2016/12/18 00:01:49 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void	*tmp;
+	void	*zone_memoire;
 
-	if ((tmp = (void*)malloc(sizeof(void) * size)))
+	zone_memoire = malloc(size);
+	if (zone_memoire)
 	{
-		ft_bzero(tmp, size);
-		return (tmp);
+		ft_bzero(zone_memoire, size);
+		return (zone_memoire);
 	}
 	else
 		return (NULL);

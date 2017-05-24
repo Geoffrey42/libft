@@ -5,32 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/20 11:32:06 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/20 13:15:41 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/14 14:26:04 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/23 15:40:49 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(char *str, char *to_find, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	unsigned int	i;
-	int				j;
-	char			*pt;
+	size_t	i;
+	int		j;
+	char	*pt;
 
 	i = 0;
 	pt = 0;
-	if (to_find[i] == '\0')
-		return (str);
-	while (i < n)
+	if (little[i] == '\0')
+		return ((char *)big);
+	while (big[i] != '\0' && i < len)
 	{
-		if (str[i] == to_find[0])
+		if (big[i] == little[0])
 		{
-			pt = str + i;
+			pt = (char *)big + i;
 			j = 0;
-			while (str[i + j] == to_find[j])
+			while (big[i + j] == little[j] && i + j < len)
 			{
-				if (to_find[j + 1] == '\0')
+				if (little[j + 1] == '\0')
 					return (pt);
 				j++;
 			}
@@ -38,5 +38,5 @@ char	*ft_strnstr(char *str, char *to_find, size_t n)
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

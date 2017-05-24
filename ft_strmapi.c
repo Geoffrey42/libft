@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/21 23:12:24 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/21 23:35:15 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/18 20:13:40 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/18 20:14:47 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char			*map;
 	unsigned int	i;
-	char			*p;
 
 	i = 0;
-	p = ft_strdup((char*)s);
-	if (p[i])
+	map = ft_strdup(s);
+	if (!map || !s || !f)
+		return (NULL);
+	while (map[i])
 	{
-		p[i] = f(i, p[i]);
-		i++;	
+		map[i] = f(i, map[i]);
+		i++;
 	}
-	p[i] = '\0';
-	return (p);
+	return (map);
 }

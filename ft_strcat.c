@@ -5,28 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/09/23 11:24:56 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/18 16:47:27 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/11 10:45:13 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/11 11:25:35 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	int		i;
-	int		j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
 	j = 0;
-	while (dest[i] != '\0')
+	while (s1[i])
 		i++;
-	while (src[j] != '\0')
+	while (s2[j])
 	{
-		dest[i] = src[j];
-		j++;
+		s1[i] = s2[j];
 		i++;
+		j++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	s1[i] = '\0';
+	return (s1);
 }

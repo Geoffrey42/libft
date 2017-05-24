@@ -5,38 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/21 17:44:10 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/18 16:45:56 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/24 09:17:42 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/25 09:02:59 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_ustrlen(char *str)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
+	size_t	i;
+	size_t	j;
+	size_t	len_dst;
 
 	i = 0;
-	while (str[i] != '\0')
+	j = 0;
+	len_dst = ft_strlen(dst);
+	while (dst[i] != '\0' && i < size)
 		i++;
-	return (i);
-}
-
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
-	unsigned int	j;
-
-	i = 0;
-	while (dest[i] && i < size)
-		i++;
-	j = i;
-	while (src[i - j] && i < size - 1)
-	{
-		dest[i] = src[i - j];
-		i++;
-	}
-	if (j < size)
-		dest[i] = '\0';
-	return (j + ft_ustrlen(src));
+	while (src[j] != '\0' && i < size - 1)
+		dst[i++] = src[j++];
+	if (size != 0 && size >= len_dst)
+		dst[i] = '\0';
+	if (size < ft_strlen(dst))
+		return (ft_strlen(src) + size);
+	else
+		return (ft_strlen(src) + len_dst);
 }

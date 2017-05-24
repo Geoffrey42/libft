@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/21 23:13:50 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/21 23:16:59 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/18 20:21:37 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/18 20:26:09 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,16 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
-	if (ft_strcmp((char*)s1, (char*)s2) == 0)
-		return (1);
-	else
+	unsigned int	i;
+
+	i = 0;
+	if (s1 == NULL || s2 == NULL)
 		return (0);
+	while (s1[i] && s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (0);
+		i++;
+	}
+	return (1);
 }

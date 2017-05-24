@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/20 10:43:07 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/20 10:57:03 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/12 19:24:20 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/25 09:15:18 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		i;
-	char	*p;
+	unsigned int	i;
 
 	i = 0;
 	while (s[i])
 	{
 		if (s[i] == (char)c)
-		{
-			p = (char *)s + i;
-			return (p);
-		}
+			return ((char *)s + i);
 		i++;
 	}
-	if ((char)c == '\0')
-	{
-		p = (char *)s + i;
-		return (p);
-	}
+	if (s[i] == (char)c)
+		return ((char *)s + i);
 	return (NULL);
 }

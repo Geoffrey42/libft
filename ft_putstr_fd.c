@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/22 11:17:42 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/22 11:18:28 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/21 08:03:43 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/27 09:40:26 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,7 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	int		i;
-
-	i = 0;
 	if (s == NULL)
 		return ;
-	while (s[i] != '\0')
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	write(fd, s, ft_strlen(s));
 }

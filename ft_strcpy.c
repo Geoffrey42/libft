@@ -5,23 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/09/21 09:09:19 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/18 16:47:51 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/10 22:53:30 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/10 22:58:20 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	int		index;
+	int		i;
 
-	index = 0;
-	while (src[index] != '\0')
+	i = 0;
+	while (src[i])
 	{
-		dest[index] = src[index];
-		index++;
+		dst[i] = src[i];
+		i++;
 	}
-	dest[index] = '\0';
-	return (dest);
+	dst[i] = '\0';
+	return (dst);
 }

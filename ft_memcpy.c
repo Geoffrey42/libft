@@ -5,26 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/19 09:42:03 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/19 10:35:05 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/07 16:17:33 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/07 17:49:17 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char	*s;
-	char	*d;
+	unsigned char	*tmp1;
+	unsigned char	*tmp2;
 
-	s = (char*)src;
-	d = (char*)dst;
+	tmp1 = (unsigned char *)src;
+	tmp2 = (unsigned char *)dst;
 	while (n > 0)
 	{
-		*d = *s;
+		*tmp2++ = *tmp1++;
 		n--;
-		d++;
-		s++;
 	}
 	return (dst);
 }

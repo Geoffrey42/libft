@@ -5,55 +5,64 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/22 11:05:01 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/22 11:07:04 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/20 11:26:23 by ggane             #+#    #+#             */
+/*   Updated: 2016/05/07 10:54:18 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	intlen(int n)
+static int		taille_str(long long int n)
 {
-	int i;
+	long long int	i;
 
-	i = 0;
-	if (n == 0)
-		return (1);
-	while (n != 0)
+	i = 1;
+	if (n < 0)
+		n = n * -1;
+	while (n >= 10)
 	{
-		n /= 10;
+		n = n / 10;
 		i++;
 	}
 	return (i);
 }
 
-static int	ft_abs(int n)
+static char		*rempli_str(char *str, long long int n, int len)
 {
+	int		debut;
+
+	str[len] = '\0';
+	len = len - 1;
 	if (n < 0)
-		return (-n);
-	return (n);
+	{
+		n = n * -1;
+		debut = 1;
+		str[0] = '-';
+	}
+	else
+		debut = 0;
+	while (len >= debut)
+	{
+		str[len] = n % 10 + '0';
+		n = n / 10;
+		len--;
+	}
+	return (str);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	char	*s;
-	int		sign;
-	int		nlen;
+	char			*str;
+	int				len;
+	long long int	lln;
 
-	sign = n < 0 ? 1 : 0;
-	nlen = intlen(n);
-	if (!(s = (char*)malloc(sizeof(char) * nlen + sign + 1)))
+	lln = n;
+	len = taille_str(lln);
+	if (lln < 0)
+		len = len + 1;
+	str = ft_strnew(len);
+	if (!str)
 		return (NULL);
-	s = s + nlen + sign;
-	*s = '\0';
-	if (!n)
-		*--s = '0';
-	while (n != 0)
-	{
-		*--s = ft_abs(n % 10) + '0';
-		n /= 10;
-	}
-	if (sign == 1)
-		*--s = '-';
-	return (s);
+	str = rempli_str(str, lln, len);
+	return (str);
 }

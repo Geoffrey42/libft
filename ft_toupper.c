@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/21 17:07:00 by ggane             #+#    #+#             */
-/*   Updated: 2016/02/21 17:12:09 by ggane            ###   ########.fr       */
+/*   Created: 2016/04/18 11:02:16 by ggane             #+#    #+#             */
+/*   Updated: 2016/04/18 11:06:51 by ggane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int		ft_toupper(int c)
 {
-	unsigned char d;
-
-	d = (unsigned char)c;
-	if (d >= 'a' && d <= 'z')
-		d = d - 32;
-	return ((int)d);
+	if (ft_islower(c))
+		c = c - 32;
+	return (c);
 }
